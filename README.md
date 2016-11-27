@@ -2,12 +2,7 @@
 This will be the home server box.
 
 # Hardware Used in This Project
-
-Raspberry PI 3 (Barebones Model)
-https://www.amazon.com/gp/product/B01CD5VC92/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B01CD5VC92&linkId=f37fbe61b011fb8df6bf544057cfcb60
-
-Raspberry PI 3 (with Power Supply, Heat Sinks and Case)
-https://www.amazon.com/gp/product/B01C6EQNNK/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B01C6EQNNK&linkId=8ea8539b42340e07b4a13acc7275c49d"
+See Hardware list
 
 # RPi3 Base Install Directions (MAC)
 Setup
