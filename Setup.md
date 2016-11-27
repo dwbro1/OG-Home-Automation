@@ -1,6 +1,3 @@
-# Setup Instructions for RPi3 Server and Remote RPi3 Clients 
-You may only need the server if you don't have more than 15 or so devices to control/monitor.
-
 # Raspberry Pi 3 Server Install and Setup
 First things first lets install the OS on the RPi3 (Raspberry PI 3) Server and get it functioning then we will move on to hooking all the hardware up in the box later. 
 
