@@ -1,22 +1,43 @@
 # Hardware you will need
 
 Raspberry PI 3 (Barebones Kit)
-
 https://www.amazon.com/gp/product/B01CD5VC92/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B01CD5VC92&linkId=9efc7ca37e1b1208c7b022ad08451493
 
 Or we prefer this kit for the money
-
 Raspberry PI 3 (UL Rated Power Supply, Heat Sinks and Case)
-
 https://www.amazon.com/gp/product/B01C6FFNY4/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B01C6FFNY4&linkId=b04c87dfd3aea671707c5b07f64329ad
 
 Raspberry PI Logic Level Converter (Required to raise GPIO pins from 3.3v to 5.0v for Sainsmart Relays to work)
-
 https://www.amazon.com/gp/product/B00XVZ78XI/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B00XVZ78XI&linkId=dececc4ed3a6ddc04b449b141fa09af8
 
 SainSmart Relay Board (We use 12v 16 relay version. Watch buying there are 5v versions as well)
-
 https://www.amazon.com/gp/product/B0057OC66U/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B0057OC66U&linkId=08cf77a0f179bdfd7bf4f594cc320e8c
 
-18 Port Fuse Panel (2 Amp max per fuse - Looking for better solution)
+18 Port Fuse Panel (Looking for better solution)
+xxxx://www.xxx.xxx
+
+Wire
+https://www.amazon.com/gp/product/B00RMBC5I0/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B00RMBC5I0&linkId=d62ffd5fcf91247dbcd0c8d920fc9927
+
+RaspberryPi SD Card (check yours here or buy one below: http://elinux.org/RPi_SD_cards )
+https://www.amazon.com/gp/product/B007XZM6VG/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B007XZM6VG&linkId=1414a5ed6baf564457076f9e7ddbe406
+
+Enclosure 12x12x4
+https://www.amazon.com/gp/product/B00AAU5D6Q/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B00AAU5D6Q&linkId=a6800dd6a04a7522b1615b8af8e0b0e1
+
+MegaWatt Power Supply (DO NOT BUY CHEAP VERSIONS) This one will range from 9v to 15v
+https://www.amazon.com/gp/product/B00JZBE97U/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B00JZBE97U&linkId=1b1227f9858afaae18009d9ed9bc0dcc
+
+Digital current Meter
+
+
+DROK DC 100A/75mV Ampere Shunt Resistor Amp Panel Meter Ammeter Shunt Currect Tester
+https://www.amazon.com/gp/product/B015FI2M8Y/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B015FI2M8Y&linkId=b5f84262dfd0b0ef5fb449a505546d76
+
+M3 Stand-offs Female to Female
+https://www.amazon.com/gp/product/B00NWFNU2U/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B00NWFNU2U&linkId=4e6780bca4af4f093ebcc71dd3cc5db2
+
+M3 PC Screws for Standoffs
+https://www.amazon.com/gp/product/B00032Q1J4/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B00032Q1J4&linkId=838edd4419d5a9d963083c76f2af2904
+
 
