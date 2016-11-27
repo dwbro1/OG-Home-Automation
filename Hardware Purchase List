@@ -1,0 +1,20 @@
+# Hardware you will need
+
+Raspberry PI 3 (Barebones Kit)
+
+https://www.amazon.com/gp/product/B01CD5VC92/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B01CD5VC92&linkId=9efc7ca37e1b1208c7b022ad08451493
+
+Or we prefer this kit for the money
+
+Raspberry PI 3 (UL Rated Power Supply, Heat Sinks and Case)
+
+https://www.amazon.com/gp/product/B01C6FFNY4/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B01C6FFNY4&linkId=b04c87dfd3aea671707c5b07f64329ad
+
+Raspberry PI Logic Level Converter (Required to raise GPIO pins from 3.3v to 5.0v for Sainsmart Relays to work)
+
+https://www.amazon.com/gp/product/B00XVZ78XI/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B00XVZ78XI&linkId=dececc4ed3a6ddc04b449b141fa09af8
+
+SainSmart Relay Board (We use 12v 16 relay version. Watch buying there are 5v versions as well)
+
+16 Relay Ver: https://www.amazon.com/gp/product/B0057OC66U/ref=as_li_tl?ie=UTF8&tag=g0573-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B0057OC66U&linkId=08cf77a0f179bdfd7bf4f594cc320e8c
+
