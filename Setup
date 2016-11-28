@@ -84,4 +84,6 @@ Now when the Pi restarts it should be running. Let's open a log file to make sur
 : tail -f mosquitto.log
 
 Now let's install the mosquitto client
-:sudo apt-get install mosquitto-client
+:sudo apt-get install mosquitto mosquitto-clients
+
+Now it's time to test!
