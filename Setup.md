@@ -41,7 +41,10 @@ https://www.modmypi.com/blog/how-to-give-your-raspberry-pi-a-static-ip-address-u
 # Dynamic IP Addresssing (Default)
 Nothing to do if using dynamic but watch the IP address it can change over time depending on your DHCP server.
 
-Now the RPi should have rebooted and you should be in the GUI interface again. Be sure to connect to your wireless again in top right corner of screen. Then drop to command line and use the folowing commands:
+Now the RPi should have rebooted and you should be in the GUI interface again. 
+
+# Update Everything
+Be sure to connect to your wireless again in top right corner of screen. Then drop to command line and use the folowing commands:
 
 : sudo apt-get update
 : sudo apt-get upgrade (watch for y/n prompts and answer "yes")
@@ -50,13 +53,47 @@ Now the RPi should have rebooted and you should be in the GUI interface again. B
 : sudo reboot (reboot after updates)
 
 
-
-
 # Step 2 Install MQTT Broker
 Now it is time to install the Broker. In my setup the Broker is the Server and I will not have it doing any relay switching itself. It will only serve as OpenHab and MQTT Broker server. So I will only be installing the MQTT Broker and Not the Client on this RPi.
 
 : sudo apt-get install Mosquitto (Use the apt-get method and not manual it puts everything in the right directories)
+: sudo apt-get update (always good idea to update and absoutely necessary at this step again)
+: sudo apt-get upgrade (If asked about /etc/lightdm/lightdm.conf update answer "Yes" not "N" which is default)
+: sudo reboot (always)
 
+Log back in and drop to a terminal window and go to the mosquitto example directory and unzip the demo conf file if not already unzipped. If it ends in .gz it is compressed.
+
+# Logging (READ BEFORE CONTINUING MQTT BROKER SETUP)
+A little on logging before we get into setting up the config file. If you are running anything long term on a raspberry PI of any model or for that fact any machine running on SD type drives, you could experience problems long-term. SSD drives do wear out and will crash eventually. Especially when running on things like OH and MQTT with tons of logging constantly writing to the drives. One way to make them last longer is to buy much larger SD cards/drives than you need. I'd say at least 50% larger. I use 32Gb micro SD cards that are approved on this list ( http://elinux.org/RPi_SD_cards ). If you are only going to use the SD cards and not an external mounted drive then I would minimize logging, once you are done verifying everything works. If you have an external HD you could send your log files there instead. This is outside the scope of this document but should be addressed for long-term use.
+
+# Configure and Start MQTT Broker
+Now lets find the mosquitto.conf file since it was not installed by default. There is an example file you can get and copy over to your conf.d directory. Mine was still gzipped so I had to unzip it first, yours may vary.
+
+: cd /usr/share/doc/mosquitto/examples
+: sudo gunzip mosquitto.conf.gz
+: ls (now you should see the file mosquitto.conf (without the .gz)
+: sudo cp mosquitto.conf /etc/mosquitto/conf.d/ - It should use defaults at this point.
+
+Now let's set mqtt broker to start as a service on reboot.
+: sudo update-rc.d mosquitto defaults
+: sudo reboot
+
+Now when the Pi restarts it should be running. Let's open a log file to make sure it is.
+: cp /var/log/mosquitto/
+: tail -f mosquitto.log
+
+
+
+# Doc Stops here below is garbage to be removed when done !!!!!!
+
+# Starting Mosquitto Broker Server
+Go to "Default Listener" section and make these changes.
+Remove # before "port 1883"
+
+# End of Doc
+
+
+# OLD To Be REmoved
 
 
 raspi-config (or preferences in graphical interface)
