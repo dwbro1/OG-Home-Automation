@@ -1,0 +1,13 @@
+# NodeMCU ESP-12E Room Sensors
+
+Using NodeMCU ESP-12E (See Code Here) on local WiFi to monitor and trigger multiple MQTT msgs to Broker to pass to OpenHab. Two versions of the sensor will be used. Central one is for room ceiling and will be minus the door contact sensor. The door version will of course add the door contact sensor and be mountable above door.
+
+# Central Version
+
+Products:
+  NodeMCU ESP-12E
+  DHT-22 (Temp & Humidity)
+  
+# Door Version
+  NodeMCU ESP-12E
+  DHT-22 (Temp & Humidity)
