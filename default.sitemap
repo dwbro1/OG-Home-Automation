@@ -1,0 +1,69 @@
+sitemap default label="Home" icon="home" {
+        Frame {
+                Group item=livingroom label="Living Room" icon="sofa" {
+                        Switch item=idf1sw10 label="Living Room Light"
+                        Switch item=idf1sw10 label="Living Room Accent Lights"
+                        Switch item=idf1sw16 label="Living Room Pictures"
+                }
+                Group item=kitchen label="Kitchen" icon="kitchen" {
+                        Switch item=idf1sw1 label="Kitchen Bar"
+                        Switch item=idf1sw2 label="Kitchen Counter"
+                        Switch item=idf1sw6 label="Kitchen Overhead"
+                        Switch item=idf1sw4 label="Kitchen Stove"
+                }
+                Group item=utilityroom label="Laundry Room" icon="laundry" {
+                        Switch item=idf1sw3 label="Laundry Room Light"
+                        Text item=laundrytemp label="Temperature"
+                        Text item=laundryhumidity label="Humidity"
+                }
+                Group item=bar label="Bar" icon="kitchen" {
+                        Switch item=idf1sw5 label="Bar Overhead"
+                        Switch item=idf1sw1 label="Kitchen Bar"
+                }
+                Group item=entrance label="Entrance" icon="entrance" {
+                        Switch item=idf1sw7 label="Entrance Light"
+                }
+                Group item=gameroom label="Gameroom" icon="gameroom" {
+                        Switch item=idf1sw8 label="Gameroom Light"
+                        Switch item=idf1sw9 label="Gameroom Desk Light"
+                }
+                Group item=pantry label="Pantry" icon="pantry" {
+                        Switch item=idf1sw14 label="Pantry Light"
+                }
+                Group item=carport label="Carport" icon="carport" {
+                        Switch item=idf1sw15 label="Door Light"
+                        Switch item=idf2sw1 label="Right"
+                        Switch item=idf2sw2 label="Center"
+                        Switch item=idf2sw3 label="Left"
+                        Switch item=idf2sw4 label="Engine Bay"
+                        Switch item=idf2sw5 label="Sitting"
+                }
+                Group item=warpcore label="Warp Core" icon="office" {
+                        Switch item=idf2sw6 label="Warp Core Light"
+                }
+                Group item=engineering label="Engineering" icon="office" {
+                        Switch item=idf2sw7 label="Engineering Light"
+                        Switch item=idf2sw8 label="Engineering Desk Light"
+                        Switch item=idf2sw9 label="Engineering Printer Light"
+                        Switch item=idf2sw10 label="Engineering Workstation Light"
+                        Switch item=idf2sw11 label="Engineering Reserved1"
+                        Switch item=idf2sw12 label="Engineering Reserved2"
+                        Switch item=idf2sw13 label="Engineering Reserved3"
+                        Switch item=idf2sw14 label="Engineering Reserved4"
+                        Switch item=idf2sw15 label="Engineering Reserved5"
+                        Switch item=idf2sw16 label="Engineering Reserved6"
+                }
+                Group item=diningroom label="Dining Room" icon="diningroom" {
+                        Switch item=idf1sw12 label="Dining Room Light"
+                        Switch item=idf1sw13 label="Dining Room Accent Light"
+                }
+                Group item=livingroom label="Living Room" icon="livingroom" {
+                        Switch item=idf1sw14 label="Living Room Light"
+                        Switch item=idf1sw15 label="Living Room Accent Light"
+                        Switch item=idf1sw16 label="Living Room Pictures"
+                }
+
+              }
+
+
+// vim: syntax=Xtend syntax=openhab
