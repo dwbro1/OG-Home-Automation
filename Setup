@@ -1,0 +1,92 @@
+#THIS IS A WORK IN PROGRESS MAY NOT BE UP TO DATE
+
+
+# Raspberry Pi 3 Server Install and Setup
+First things first lets install the OS on the RPi3 (Raspberry PI 3) Server and get it functioning then we will move on to hooking all the hardware up in the box later. 
+
+# RPi3 Base Install Directions (MAC)
+
+Format SD card using SDformatter
+https://www.sdcard.org/downloads/formatter_4/eula_mac/index.html
+
+Download Raspian Noobs
+If OLD like me you know what to do:
+
+Install and boot
+
+If NEW then do this:
+Download Noobs onto your computer
+Unzip and copy Noobs contents to root folder on newely formatted SD card
+Plug in HDMI, mouse, keyboard and ethernet (unless you use wifi) to RPi3
+Put SD card into PI3 and plug it in (Remember 5V 2-2.5amp Power Supply ONLY for RPi3 DO NOT PLUG INTO 12V PS)
+On initial boot Noobs will as you to connect to your wifi (if used). Do this first!
+Once connected Noobs will ask you which OS to install. Choose Raspian! (now wait about an hour for it to decompress)
+Once rebooted you will be in GUI interface, start command prompt and type the following command
+
+: sudo raspi-config
+
+Once raspi-config menu loaded do this:
+Change password for user pi to whatever you want
+In Advanced options - Change Memory allocation to 16
+In Advanced options - Change RPi3 name to whatever, I use RPi3HAS for server and RPi3HACx (x=client box ID number).
+In Advanced options - Turn off i2C
+In Advanced options - Turn off SPI
+In Advanced options - Turn off Serial
+Save and Reboot
+
+Login with user Pi password you changed prompt should not look like this if you use my server name)
+pi@RPi3HAS:
+
+# Static IP address setup
+If you decide to set a static IP address (I Do) then see the following article is it outside the scope of this document. If you are unsure of static IP addressing then leave as is. Eventually, you will want to assign static IP addresses to your system but you have to be aware of Ip addressing schemes and subnet masking, etc. before going there. Here is a good link on how to change it once you know what you want.
+
+https://www.modmypi.com/blog/how-to-give-your-raspberry-pi-a-static-ip-address-update
+
+# Dynamic IP Addresssing (Default)
+Nothing to do if using dynamic but watch the IP address it can change over time depending on your DHCP server.
+
+Now the RPi should have rebooted and you should be in the GUI interface again. 
+
+# Update Everything
+Be sure to connect to your wireless again in top right corner of screen. Then drop to command line and use the folowing commands:
+
+: sudo apt-get update
+: sudo apt-get upgrade (watch for y/n prompts and answer "yes")
+: sudo apt-get install rpi-update
+: sudo rpi-update
+: sudo reboot (reboot after updates)
+
+
+# Step 2 Install MQTT Broker
+Now it is time to install the Broker. In my setup the Broker is the Server and I will not have it doing any relay switching itself. It will only serve as OpenHab and MQTT Broker server. So I will only be installing the MQTT Broker and Not the Client on this RPi.
+
+: sudo apt-get install Mosquitto (Use the apt-get method and not manual it puts everything in the right directories)
+: sudo apt-get update (always good idea to update and absoutely necessary at this step again)
+: sudo apt-get upgrade (If asked about /etc/lightdm/lightdm.conf update answer "Yes" not "N" which is default)
+: sudo reboot (always)
+
+Log back in and drop to a terminal window and go to the mosquitto example directory and unzip the demo conf file if not already unzipped. If it ends in .gz it is compressed.
+
+# Logging (READ BEFORE CONTINUING MQTT BROKER SETUP)
+A little on logging before we get into setting up the config file. If you are running anything long term on a raspberry PI of any model or for that fact any machine running on SD type drives, you could experience problems long-term. SSD drives do wear out and will crash eventually. Especially when running on things like OH and MQTT with tons of logging constantly writing to the drives. One way to make them last longer is to buy much larger SD cards/drives than you need. I'd say at least 50% larger. I use 32Gb micro SD cards that are approved on this list ( http://elinux.org/RPi_SD_cards ). If you are only going to use the SD cards and not an external mounted drive then I would minimize logging, once you are done verifying everything works. If you have an external HD you could send your log files there instead. This is outside the scope of this document but should be addressed for long-term use.
+
+# Configure and Start MQTT Broker
+Now lets find the mosquitto.conf file since it was not installed by default. There is an example file you can get and copy over to your conf.d directory. Mine was still gzipped so I had to unzip it first, yours may vary.
+
+: cd /usr/share/doc/mosquitto/examples
+: sudo gunzip mosquitto.conf.gz
+: ls (now you should see the file mosquitto.conf (without the .gz)
+: sudo cp mosquitto.conf /etc/mosquitto/conf.d/ - It should use defaults at this point.
+
+Now let's set mqtt broker to start as a service on reboot.
+: sudo update-rc.d mosquitto defaults
+: sudo reboot
+
+Now when the Pi restarts it should be running. Let's open a log file to make sure it is.
+: cp /var/log/mosquitto/
+: tail -f mosquitto.log
+
+Now let's install the mosquitto client
+:sudo apt-get install mosquitto mosquitto-clients
+
+Now it's time to test!
